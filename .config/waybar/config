@@ -15,18 +15,22 @@
     ],
     "hyprland/workspaces": {
         "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
         "all-outputs": true,
         "format": "{name}"
     },
     "clock": {
         "format": "{:%H:%M %d/%m}",
         "tooltip-format": "<tt>{calendar}</tt>\n<big>{:%Y %B}</big>\n:: Week {:%V}",
-        "format-alt": "{:%d/%m}"
+        "format-alt": "{:%d/%m}",
+        "on-click": "exec [ -x \"$(command -v gnome-calendar)\" ] && gnome-calendar || [ -x \"$(command -v korganizer)\" ] && korganizer || notify-send 'Calendar' 'Calendar application not found'"
     },
     "network": {
         "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "Ethernet ({ifname})",
-        "tooltip-format": "{ifname}: {ipaddr}"
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "exec [ -x \"$(command -v nm-connection-editor)\" ] && nm-connection-editor || [ -x \"$(command -v nmtui)\" ] && nmtui || notify-send 'Network Manager' 'Network manager not available'"
     },
     "pulseaudio": {
         "scroll-step": 5,
@@ -41,7 +45,8 @@
             "portable": "📱",
             "car": "🚗",
             "default": ["🔈", "🔉", "🔊"]
-        }
+        },
+        "on-click": "exec [ -x \"$(command -v pavucontrol)\" ] && pavucontrol || [ -x \"$(command -v alsamixer)\" ] && alsamixer || notify-send 'Audio Control' 'Audio mixer not available'"
     },
     "battery": {
         "states": {
@@ -52,6 +57,7 @@
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "on-click": "exec [ -x \"$(command -v systemctl)\" ] && systemctl suspend || [ -x \"$(command -v loginctl)\" ] && loginctl suspend || notify-send 'Power Management' 'Suspend not available'"
     }
 }

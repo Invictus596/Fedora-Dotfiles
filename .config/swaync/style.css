@@ -125,11 +125,11 @@ window#SwayNotificationCenter {
 }
 
 .widget-button:hover {
-    background: @surface1;
+    background: @border-color;
 }
 
 .widget-button:active {
-    background: @surface2;
+    background: @accent;
 }
 
 .network-grid,
