@@ -1,0 +1,165 @@
+/* SwayNC Control Center Style */
+@define-color bg #1e1e2e;
+@define-color fg #cdd6f4;
+@define-color accent #89b4fa;
+@define-color border-color #313244;
+
+window#SwayNotificationCenter {
+    background: transparent;
+}
+
+.floating-notifications.background .notification-row .notification-background {
+    background: @bg;
+    border: 2px solid @border-color;
+    border-radius: 16px;
+    margin: 10px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.4);
+    padding: 0;
+}
+
+.notification {
+    background: transparent;
+    border-radius: 16px;
+    padding: 10px;
+}
+
+.notification-content {
+    background: transparent;
+    padding: 5px;
+}
+
+.notification-default-action {
+    background: transparent;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.notification-close-button {
+    background: @border-color;
+    color: @fg;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.notification-icon {
+    background: transparent;
+    padding: 5px;
+    font-size: 2em;
+}
+
+.notification-title {
+    background: transparent;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 5px;
+    color: @fg;
+}
+
+.notification-body {
+    background: transparent;
+    padding: 5px;
+    color: @fg;
+}
+
+.summary {
+    font-weight: bold;
+}
+
+.body {
+    color: @fg;
+}
+
+.control-center {
+    background: @bg;
+    border: 2px solid @border-color;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    color: @fg;
+}
+
+.control-center-list {
+    background: transparent;
+}
+
+.dnd-box {
+    background: @border-color;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.dnd-label {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: @fg;
+}
+
+.dnd-switch {
+    font-size: 1.5em;
+}
+
+.label {
+    color: @fg;
+    font-size: 1.2em;
+}
+
+.widget-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: @accent;
+    padding: 10px 0;
+}
+
+.widget-button {
+    background: @border-color;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    color: @fg;
+    font-size: 1.5em;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.widget-button:hover {
+    background: @surface1;
+}
+
+.widget-button:active {
+    background: @surface2;
+}
+
+.network-grid,
+.bluetooth-grid {
+    background: transparent;
+    padding: 10px;
+}
+
+.network-item,
+.bluetooth-item {
+    background: @border-color;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    color: @fg;
+}
+
+.network-item-name,
+.bluetooth-item-name {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.network-item-active,
+.bluetooth-item-active {
+    background: @accent;
+    color: @bg;
+}
+
+.empty-notifications-label {
+    color: @fg;
+    font-size: 1.2em;
+}
